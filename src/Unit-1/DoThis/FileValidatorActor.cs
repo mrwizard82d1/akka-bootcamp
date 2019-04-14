@@ -3,6 +3,7 @@ using Akka.Actor;
 
 namespace WinTail
 {
+    /// <inheritdoc />
     /// <summary>
     /// Actor that validates user input and signals result to others.
     /// </summary>

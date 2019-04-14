@@ -60,8 +60,8 @@ namespace WinTail
        
        #endregion
 
-       private readonly IActorRef _reporterActor;
        private readonly string _filePath;
+       private readonly IActorRef _reporterActor;
        private readonly FileObserver _observer;
        private readonly Stream _fileStream;
        private readonly StreamReader _fileStreamReader;
