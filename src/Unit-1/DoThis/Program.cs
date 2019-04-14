@@ -12,8 +12,8 @@ namespace WinTail
             // initialize MyActorSystem
             MyActorSystem = ActorSystem.Create("MyActorSystem");
 
-            // Initialize the actors using separate Props.
-            var consoleWriterProps = Props.Create<ConsoleWriterActor>(); // **NOT** recommended
+            // Initialize the top-level actors within the actor system.
+            var consoleWriterProps = Props.Create<ConsoleWriterActor>();
             var consoleWriterActor = MyActorSystem.ActorOf(consoleWriterProps, "consoleWriterActor");
 
             // Make the tail coordinator actor.
@@ -27,7 +27,7 @@ namespace WinTail
             var consoleReaderProps = Props.Create<ConsoleReaderActor>();
             var consoleReaderActor = MyActorSystem.ActorOf(consoleReaderProps, "consoleReaderActor");
             
-            // tell console reader to begin
+            // Begin processing.
             consoleReaderActor.Tell(ConsoleReaderActor.StartCommand);
 
             // blocks the main thread from exiting until the actor system is shut down
