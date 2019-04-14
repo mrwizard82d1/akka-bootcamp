@@ -48,9 +48,6 @@ namespace WinTail
             switch (message)
             {
                 case StartTail st:
-                    // Here we create our first parent/child relationship!
-                    // The `TailActor` instance created here is a child of
-                    // this instance of a `TailCoordinatorActor`.
                     Context.ActorOf(Props.Create(() => new TailActor(st.ReporterActor, st.FilePath)),
                         $"TailActor-${Path.GetFileName(st.FilePath)}");
                     break;
