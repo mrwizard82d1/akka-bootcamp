@@ -2,10 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b3fe7547-f213-4627-a3f9-e56076b488da" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinTail/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinTail/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.WinTail/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.WinTail/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/ConsoleReaderActor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleReaderActor.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ConsoleWriterActor.cs" beforeDir="false" afterPath="$PROJECT_DIR$/ConsoleWriterActor.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Program.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/WinTail.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WinTail.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/packages.config" beforeDir="false" afterPath="$PROJECT_DIR$/packages.config" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -14,19 +16,29 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf>
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/Program.cs">
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/Messages.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="150">
-              <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+            <state relative-caret-position="302">
+              <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
               <folding>
-                <marker date="1555194553826" expanded="true" signature="6:31" ph="..." />
-                <marker date="1555194553826" expanded="true" signature="50:1545" ph="{...}" />
-                <marker date="1555194553826" expanded="true" signature="57:1543" ph="Program" />
-                <marker date="1555194553826" expanded="true" signature="90:1528" ph="{...}" />
-                <marker date="1555194553826" expanded="true" signature="186:851" ph="{...}" />
-                <marker date="1555194553826" expanded="true" signature="900:1522" ph="{...}" />
+                <marker date="1555202052563" expanded="true" signature="17:1516" ph="{...}" />
+                <marker date="1555202052563" expanded="true" signature="45:1514" ph="{...}" />
+                <marker date="1555202052563" expanded="false" signature="60:252" ph="Neutral / system messages" />
+                <marker date="1555202052563" expanded="true" signature="103:188" ph="/// Marker class to continue processing. ... " />
+                <marker date="1555202052563" expanded="true" signature="270:638" ph="Success messages" />
+                <marker date="1555202052563" expanded="true" signature="304:405" ph="/// Base class for signalling user input was valid. ... " />
+                <marker date="1555202052563" expanded="true" signature="439:610" ph="{...}" />
+                <marker date="1555202052563" expanded="true" signature="496:557" ph="{...}" />
+                <marker date="1555202052563" expanded="true" signature="656:1508" ph="Error messages" />
+                <marker date="1555202052563" expanded="true" signature="688:791" ph="/// Base class for signalling user input was involid. ... " />
+                <marker date="1555202052563" expanded="true" signature="823:992" ph="{...}" />
+                <marker date="1555202052563" expanded="true" signature="878:939" ph="{...}" />
+                <marker date="1555202052563" expanded="true" signature="1002:1077" ph="/// User provided blank input. ... " />
+                <marker date="1555202052563" expanded="true" signature="1126:1214" ph="{...}" />
+                <marker date="1555202052563" expanded="true" signature="1224:1341" ph="/// User provided invalid input (currently an odd number of characters). ... " />
+                <marker date="1555202052563" expanded="true" signature="1391:1480" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -35,17 +47,45 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConsoleReaderActor.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="480">
-              <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+            <state relative-caret-position="43">
+              <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
               <folding>
-                <marker date="1555194126106" expanded="false" signature="6:31" ph="..." />
-                <marker date="1555194126106" expanded="true" signature="50:1168" ph="{...}" />
-                <marker date="1555194126106" expanded="true" signature="57:220" ph="/// Actor responsible for reading FROM the console.  ... " />
-                <marker date="1555194126106" expanded="true" signature="264:1166" ph="{...}" />
-                <marker date="1555194126106" expanded="true" signature="432:506" ph="{...}" />
-                <marker date="1555194126106" expanded="true" signature="565:1159" ph="{...}" />
-                <marker date="1555194126106" expanded="true" signature="735:941" ph="{...}" />
-                <marker date="1555194126106" expanded="true" signature="766:859" ph="/* shut down the system (acquire handle to system via ... */" />
+                <marker date="1555201934981" expanded="false" signature="6:31" ph="..." />
+                <marker date="1555201934981" expanded="true" signature="50:3372" ph="{...}" />
+                <marker date="1555201934981" expanded="true" signature="57:220" ph="/// Actor responsible for reading FROM the console.  ... " />
+                <marker date="1555201934981" expanded="true" signature="264:3370" ph="{...}" />
+                <marker date="1555201934981" expanded="true" signature="502:576" ph="{...}" />
+                <marker date="1555201934981" expanded="true" signature="635:959" ph="{...}" />
+                <marker date="1555201934981" expanded="true" signature="691:758" ph="{...}" />
+                <marker date="1555201934981" expanded="true" signature="811:913" ph="{...}" />
+                <marker date="1555201934981" expanded="true" signature="969:3363" ph="Internal methods" />
+                <marker date="1555201934981" expanded="true" signature="1011:1085" ph="/// Tell the user what to do. ... " />
+                <marker date="1555201934981" expanded="true" signature="1128:1401" ph="{...}" />
+                <marker date="1555201934981" expanded="true" signature="1411:1590" ph="/// Reads input from the console, validates it, then signals the appropriate response ... " />
+                <marker date="1555201934981" expanded="true" signature="1633:2851" ph="{...}" />
+                <marker date="1555201934981" expanded="true" signature="1736:1943" ph="{...}" />
+                <marker date="1555201934981" expanded="true" signature="2037:2296" ph="{...}" />
+                <marker date="1555201934981" expanded="true" signature="2068:2238" ph="/* Shutdown the entire actor system (allows process to exit) ... */" />
+                <marker date="1555201934981" expanded="true" signature="2313:2840" ph="{...}" />
+                <marker date="1555201934981" expanded="true" signature="2365:2660" ph="{...}" />
+                <marker date="1555201934981" expanded="true" signature="2681:2826" ph="{...}" />
+                <marker date="1555201934981" expanded="true" signature="2861:3197" ph="/// Validates &lt;paramref name=&quot;message&quot;/&gt;. ... " />
+                <marker date="1555201934981" expanded="true" signature="3242:3343" ph="{...}" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/Program.cs">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="210">
+              <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
+              <folding>
+                <marker date="1555202586060" expanded="true" signature="36:924" ph="{...}" />
+                <marker date="1555202586060" expanded="true" signature="43:922" ph="Program" />
+                <marker date="1555202586060" expanded="true" signature="76:907" ph="{...}" />
+                <marker date="1555202586060" expanded="true" signature="159:901" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -54,15 +94,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/ConsoleWriterActor.cs">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="120">
-              <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+            <state relative-caret-position="135">
+              <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
               <folding>
-                <marker date="1555191498042" expanded="false" signature="6:31" ph="..." />
-                <marker date="1555191498042" expanded="true" signature="50:1127" ph="{...}" />
-                <marker date="1555191498042" expanded="true" signature="57:209" ph="/// Actor responsible for serializing message writes to the console. ... " />
-                <marker date="1555191498042" expanded="true" signature="253:1125" ph="{...}" />
-                <marker date="1555191498042" expanded="true" signature="317:1119" ph="{...}" />
-                <marker date="1555191498042" expanded="true" signature="454:676" ph="{...}" />
+                <marker date="1555198771048" expanded="false" signature="6:31" ph="..." />
+                <marker date="1555198771048" expanded="true" signature="50:985" ph="{...}" />
+                <marker date="1555198771048" expanded="true" signature="57:232" ph="/// Actor responsible for serializing message writes to the console. ... " />
+                <marker date="1555198771048" expanded="true" signature="276:983" ph="{...}" />
+                <marker date="1555198771048" expanded="true" signature="340:977" ph="{...}" />
+                <marker date="1555198771048" expanded="true" signature="398:591" ph="{...}" />
+                <marker date="1555198771048" expanded="true" signature="646:843" ph="{...}" />
+                <marker date="1555198771048" expanded="true" signature="860:932" ph="{...}" />
               </folding>
             </state>
           </provider>
@@ -74,6 +116,7 @@
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
   </component>
   <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Messages.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Program.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ConsoleReaderActor.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/ConsoleWriterActor.cs" root0="FORCE_HIGHLIGHTING" />
@@ -81,7 +124,9 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
+        <option value="$PROJECT_DIR$/ConsoleWriterActor.cs" />
         <option value="$PROJECT_DIR$/ConsoleReaderActor.cs" />
+        <option value="$PROJECT_DIR$/Messages.cs" />
         <option value="$PROJECT_DIR$/Program.cs" />
       </list>
     </option>
@@ -94,30 +139,10 @@
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
-    <navigator currentView="SolutionExplorer" proportions="" version="1">
+    <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes>
-      <pane id="FileSystemExplorer" />
-      <pane id="AssemblyExplorer" />
-      <pane id="SolutionExplorer">
-        <subPane>
-          <expand>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="WinTail" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-            <path>
-              <item name="Project" type="784c90a0:SolutionExplorerRootNode" />
-              <item name="WinTail" type="24d0babc:SolutionExplorerModelNode" />
-              <item name="WinTail" type="24d0babc:SolutionExplorerModelNode" />
-            </path>
-          </expand>
-          <select />
-        </subPane>
-        <option name="show-all-files" value="false" />
-      </pane>
-    </panes>
+    <panes />
   </component>
   <component name="PropertiesComponent">
     <property name="Rider.DefaultBreakpoints.AreToggled" value="true" />
@@ -188,12 +213,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1555192500210</updated>
-      <workItem from="1555192504386" duration="1578000" />
+      <workItem from="1555192504386" duration="1847000" />
+      <workItem from="1555196055086" duration="2782000" />
+      <workItem from="1555201441303" duration="1188000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1578000" />
+    <option name="totallyTimeSpent" value="5817000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -208,32 +235,32 @@
     <frame x="-7" y="-7" width="1550" height="838" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Favorites" side_tool="true" />
-      <window_info id="Image Layers" />
-      <window_info id="Capture Tool" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16442953" />
+      <window_info content_ui="combo" id="Project" order="0" weight="0.16442953" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
-      <window_info anchor="bottom" id="NuGet" weight="0.32941177" />
-      <window_info anchor="bottom" id="Docker" show_stripe_button="false" />
-      <window_info anchor="bottom" id="Version Control" />
-      <window_info anchor="bottom" id="Unit Tests" />
-      <window_info anchor="bottom" id="Terminal" />
-      <window_info anchor="bottom" id="Event Log" side_tool="true" />
-      <window_info anchor="bottom" id="Performance Profiler" />
-      <window_info anchor="bottom" id="Build" weight="0.32941177" />
+      <window_info id="Image Layers" order="2" />
+      <window_info id="Capture Tool" order="3" />
+      <window_info id="Favorites" order="4" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.32941177" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.32941177" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="right" id="Capture Analysis" />
-      <window_info anchor="right" id="Errors In Solution" />
-      <window_info anchor="right" id="Unit Tests Coverage" />
+      <window_info anchor="bottom" id="NuGet" order="7" weight="0.32941177" />
+      <window_info anchor="bottom" id="Performance Profiler" order="8" />
+      <window_info anchor="bottom" id="Docker" order="9" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="10" />
+      <window_info anchor="bottom" id="Unit Tests" order="11" />
+      <window_info anchor="bottom" id="Terminal" order="12" />
+      <window_info anchor="bottom" id="Event Log" order="13" side_tool="true" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
+      <window_info anchor="right" id="Capture Analysis" order="3" />
+      <window_info anchor="right" id="Errors In Solution" order="4" />
+      <window_info anchor="right" id="Unit Tests Coverage" order="5" />
+      <window_info anchor="right" id="Build" order="6" weight="0.39932886" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -252,47 +279,85 @@
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/ConsoleWriterActor.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="120">
-          <caret line="9" column="10" selection-start-line="9" selection-start-column="10" selection-end-line="9" selection-end-column="10" />
+        <state relative-caret-position="135">
+          <caret line="10" column="11" selection-start-line="10" selection-start-column="11" selection-end-line="10" selection-end-column="11" />
           <folding>
-            <marker date="1555191498042" expanded="false" signature="6:31" ph="..." />
-            <marker date="1555191498042" expanded="true" signature="50:1127" ph="{...}" />
-            <marker date="1555191498042" expanded="true" signature="57:209" ph="/// Actor responsible for serializing message writes to the console. ... " />
-            <marker date="1555191498042" expanded="true" signature="253:1125" ph="{...}" />
-            <marker date="1555191498042" expanded="true" signature="317:1119" ph="{...}" />
-            <marker date="1555191498042" expanded="true" signature="454:676" ph="{...}" />
+            <marker date="1555198771048" expanded="false" signature="6:31" ph="..." />
+            <marker date="1555198771048" expanded="true" signature="50:985" ph="{...}" />
+            <marker date="1555198771048" expanded="true" signature="57:232" ph="/// Actor responsible for serializing message writes to the console. ... " />
+            <marker date="1555198771048" expanded="true" signature="276:983" ph="{...}" />
+            <marker date="1555198771048" expanded="true" signature="340:977" ph="{...}" />
+            <marker date="1555198771048" expanded="true" signature="398:591" ph="{...}" />
+            <marker date="1555198771048" expanded="true" signature="646:843" ph="{...}" />
+            <marker date="1555198771048" expanded="true" signature="860:932" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/ConsoleReaderActor.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="480">
-          <caret line="34" column="30" selection-start-line="34" selection-start-column="30" selection-end-line="34" selection-end-column="30" />
+        <state relative-caret-position="43">
+          <caret line="48" column="29" selection-start-line="48" selection-start-column="29" selection-end-line="48" selection-end-column="29" />
           <folding>
-            <marker date="1555194126106" expanded="false" signature="6:31" ph="..." />
-            <marker date="1555194126106" expanded="true" signature="50:1168" ph="{...}" />
-            <marker date="1555194126106" expanded="true" signature="57:220" ph="/// Actor responsible for reading FROM the console.  ... " />
-            <marker date="1555194126106" expanded="true" signature="264:1166" ph="{...}" />
-            <marker date="1555194126106" expanded="true" signature="432:506" ph="{...}" />
-            <marker date="1555194126106" expanded="true" signature="565:1159" ph="{...}" />
-            <marker date="1555194126106" expanded="true" signature="735:941" ph="{...}" />
-            <marker date="1555194126106" expanded="true" signature="766:859" ph="/* shut down the system (acquire handle to system via ... */" />
+            <marker date="1555201934981" expanded="false" signature="6:31" ph="..." />
+            <marker date="1555201934981" expanded="true" signature="50:3372" ph="{...}" />
+            <marker date="1555201934981" expanded="true" signature="57:220" ph="/// Actor responsible for reading FROM the console.  ... " />
+            <marker date="1555201934981" expanded="true" signature="264:3370" ph="{...}" />
+            <marker date="1555201934981" expanded="true" signature="502:576" ph="{...}" />
+            <marker date="1555201934981" expanded="true" signature="635:959" ph="{...}" />
+            <marker date="1555201934981" expanded="true" signature="691:758" ph="{...}" />
+            <marker date="1555201934981" expanded="true" signature="811:913" ph="{...}" />
+            <marker date="1555201934981" expanded="true" signature="969:3363" ph="Internal methods" />
+            <marker date="1555201934981" expanded="true" signature="1011:1085" ph="/// Tell the user what to do. ... " />
+            <marker date="1555201934981" expanded="true" signature="1128:1401" ph="{...}" />
+            <marker date="1555201934981" expanded="true" signature="1411:1590" ph="/// Reads input from the console, validates it, then signals the appropriate response ... " />
+            <marker date="1555201934981" expanded="true" signature="1633:2851" ph="{...}" />
+            <marker date="1555201934981" expanded="true" signature="1736:1943" ph="{...}" />
+            <marker date="1555201934981" expanded="true" signature="2037:2296" ph="{...}" />
+            <marker date="1555201934981" expanded="true" signature="2068:2238" ph="/* Shutdown the entire actor system (allows process to exit) ... */" />
+            <marker date="1555201934981" expanded="true" signature="2313:2840" ph="{...}" />
+            <marker date="1555201934981" expanded="true" signature="2365:2660" ph="{...}" />
+            <marker date="1555201934981" expanded="true" signature="2681:2826" ph="{...}" />
+            <marker date="1555201934981" expanded="true" signature="2861:3197" ph="/// Validates &lt;paramref name=&quot;message&quot;/&gt;. ... " />
+            <marker date="1555201934981" expanded="true" signature="3242:3343" ph="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/Messages.cs">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="302">
+          <caret line="33" column="61" selection-start-line="33" selection-start-column="61" selection-end-line="33" selection-end-column="61" />
+          <folding>
+            <marker date="1555202052563" expanded="true" signature="17:1516" ph="{...}" />
+            <marker date="1555202052563" expanded="true" signature="45:1514" ph="{...}" />
+            <marker date="1555202052563" expanded="false" signature="60:252" ph="Neutral / system messages" />
+            <marker date="1555202052563" expanded="true" signature="103:188" ph="/// Marker class to continue processing. ... " />
+            <marker date="1555202052563" expanded="true" signature="270:638" ph="Success messages" />
+            <marker date="1555202052563" expanded="true" signature="304:405" ph="/// Base class for signalling user input was valid. ... " />
+            <marker date="1555202052563" expanded="true" signature="439:610" ph="{...}" />
+            <marker date="1555202052563" expanded="true" signature="496:557" ph="{...}" />
+            <marker date="1555202052563" expanded="true" signature="656:1508" ph="Error messages" />
+            <marker date="1555202052563" expanded="true" signature="688:791" ph="/// Base class for signalling user input was involid. ... " />
+            <marker date="1555202052563" expanded="true" signature="823:992" ph="{...}" />
+            <marker date="1555202052563" expanded="true" signature="878:939" ph="{...}" />
+            <marker date="1555202052563" expanded="true" signature="1002:1077" ph="/// User provided blank input. ... " />
+            <marker date="1555202052563" expanded="true" signature="1126:1214" ph="{...}" />
+            <marker date="1555202052563" expanded="true" signature="1224:1341" ph="/// User provided invalid input (currently an odd number of characters). ... " />
+            <marker date="1555202052563" expanded="true" signature="1391:1480" ph="{...}" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/Program.cs">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="150">
-          <caret line="10" column="25" selection-start-line="10" selection-start-column="25" selection-end-line="10" selection-end-column="25" />
+        <state relative-caret-position="210">
+          <caret line="14" column="37" selection-start-line="14" selection-start-column="37" selection-end-line="14" selection-end-column="37" />
           <folding>
-            <marker date="1555194553826" expanded="true" signature="6:31" ph="..." />
-            <marker date="1555194553826" expanded="true" signature="50:1545" ph="{...}" />
-            <marker date="1555194553826" expanded="true" signature="57:1543" ph="Program" />
-            <marker date="1555194553826" expanded="true" signature="90:1528" ph="{...}" />
-            <marker date="1555194553826" expanded="true" signature="186:851" ph="{...}" />
-            <marker date="1555194553826" expanded="true" signature="900:1522" ph="{...}" />
+            <marker date="1555202586060" expanded="true" signature="36:924" ph="{...}" />
+            <marker date="1555202586060" expanded="true" signature="43:922" ph="Program" />
+            <marker date="1555202586060" expanded="true" signature="76:907" ph="{...}" />
+            <marker date="1555202586060" expanded="true" signature="159:901" ph="{...}" />
           </folding>
         </state>
       </provider>
