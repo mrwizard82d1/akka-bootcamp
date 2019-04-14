@@ -1,19 +1,19 @@
-using System.ComponentModel;
 using System.IO;
 using System.Text;
 using Akka.Actor;
 
 namespace WinTail
 {
+    /// <inheritdoc />
     /// <summary>
     /// Monitors the file at `_filePath` for changes and sends changes to `_reporterActor`.
     /// </summary>
     public class TailActor : UntypedActor
     {
-        #region MessageTypes
+        #region Message types
 
        /// <summary>
-       /// Signal that the file has been written too, and we need to read the next line of the file.
+       /// Signal that the file has been changed, and we need to read the next line of the file.
        /// </summary>
        public class FileWrite
        {
