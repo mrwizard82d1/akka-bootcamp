@@ -1,7 +1,10 @@
+using System;
+using System.IO;
 using Akka.Actor;
 
 namespace WinTail
 {
+    /// <inheritdoc />
     /// <summary>
     /// Starts and stops tailing files at user-specified paths.
     /// </summary>
@@ -49,9 +52,32 @@ namespace WinTail
                     // The `TailActor` instance created here is a child of
                     // this instance of a `TailCoordinatorActor`.
                     Context.ActorOf(Props.Create(() => new TailActor(st.ReporterActor, st.FilePath)),
-                        $"TailActor-${st.FilePath}");
+                        $"TailActor-${Path.GetFileName(st.FilePath)}");
                     break;
             }
+        }
+
+        protected override SupervisorStrategy SupervisorStrategy()
+        {
+            return new OneForOneStrategy(
+                10, // maximum number of retries
+                TimeSpan.FromSeconds(30), // within an interval 
+                x => // local only decider
+                {
+                    switch (x)
+                    {
+                        case ArithmeticException _:
+                            // Perhaps we consider an ArithmeticException to not be application critical
+                            // so we simply ignore the error and keep going.
+                            return Directive.Resume;
+                        case NotSupportedException _:
+                            // An error from which we cannot recover so we stop the failing actor.
+                            return Directive.Stop;
+                        default:
+                            // In all other cases, simply restart the failing actor.
+                            return Directive.Restart;
+                    }
+                }); 
         }
     }
 }
