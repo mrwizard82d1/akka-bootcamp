@@ -6,7 +6,13 @@
     </PropertyGroup>
 
     <ItemGroup>
-        <Compile Include="Program.fs"/>
+        <Compile Include="ConsoleActorReader.fs" />
+        <Compile Include="Program.fs" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Akka" Version="1.3.12" />
+      <PackageReference Include="Akkling" Version="0.9.3" />
     </ItemGroup>
 
 </Project>
