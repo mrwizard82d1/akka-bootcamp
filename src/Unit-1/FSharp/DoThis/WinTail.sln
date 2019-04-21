@@ -1,9 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.31101.0
-MinimumVisualStudioVersion = 10.0.40219.1
-Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WinTail", "WinTail.fsproj", "{44E637F0-5B83-4EFE-9EED-2BEC2AB8F972}"
+Project("{F2A71F9B-5D33-465A-A702-920D77279786}") = "WinTail", "WinTail.fsproj", "{AE3D25BF-2EF7-4DBD-9112-9B70A9765441}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -11,12 +8,9 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{44E637F0-5B83-4EFE-9EED-2BEC2AB8F972}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{44E637F0-5B83-4EFE-9EED-2BEC2AB8F972}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{44E637F0-5B83-4EFE-9EED-2BEC2AB8F972}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{44E637F0-5B83-4EFE-9EED-2BEC2AB8F972}.Release|Any CPU.Build.0 = Release|Any CPU
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
+		{AE3D25BF-2EF7-4DBD-9112-9B70A9765441}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE3D25BF-2EF7-4DBD-9112-9B70A9765441}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE3D25BF-2EF7-4DBD-9112-9B70A9765441}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE3D25BF-2EF7-4DBD-9112-9B70A9765441}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal
