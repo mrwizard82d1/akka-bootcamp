@@ -24,9 +24,11 @@ module Actors =
         | Message(input) -> 
             // send input to the console writer to process and print
             // YOU NEED TO FILL IN HERE
+            consoleWriter <! input
 
             // continue reading messages from the console
             // YOU NEED TO FILL IN HERE
+            mailbox.Self <! Continue
 
     let consoleWriterActor message = 
         let (|Even|Odd|) n = if n % 2 = 0 then Even else Odd

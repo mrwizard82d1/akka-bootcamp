@@ -73,8 +73,8 @@
         <Reference Include="System.Xml" />
     </ItemGroup>
     <ItemGroup>
-        <Compile Include="Actors.fs" />
         <Compile Include="AssemblyInfo.fs" />
+        <Compile Include="Actors.fs" />
         <Compile Include="Program.fs" />
         <Content Include="packages.config" />
     </ItemGroup>

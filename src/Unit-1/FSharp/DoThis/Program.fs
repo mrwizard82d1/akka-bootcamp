@@ -1,7 +1,5 @@
 ﻿open System
 open Akka.FSharp
-open Akka.FSharp.Spawn
-open Akka.Actor
 open WinTail
 
 let printInstructions () =
@@ -22,14 +20,21 @@ let printInstructions () =
 let main argv = 
     // initialize an actor system
     // YOU NEED TO FILL IN HERE
+    let myActorSystem = System.create "MyActorSystem" (Configuration.load())
         
     printInstructions ()
     
     // make your first actors using the 'spawn' function
     // YOU NEED TO FILL IN HERE
+    let consoleWriterActor = spawn myActorSystem "consoleWriterActor" (actorOf Actors.consoleWriterActor)
+    // The expression, `(Actors.consoleReaderActor consoleWriterActor)`, is a partial application of the
+    // function, `Actors.consoleReaderActor`.
+    let consoleReaderActor =
+        spawn myActorSystem "consoleReaderActor" (actorOf2 (Actors.consoleReaderActor consoleWriterActor))
 
     // tell the consoleReader actor to begin
     // YOU NEED TO FILL IN HERE
+    consoleReaderActor <! Actors.Start
 
     myActorSystem.WhenTerminated.Wait ()
     0
