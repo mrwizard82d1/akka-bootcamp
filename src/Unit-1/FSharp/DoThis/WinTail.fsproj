@@ -74,6 +74,7 @@
     </ItemGroup>
     <ItemGroup>
         <Compile Include="AssemblyInfo.fs" />
+        <Compile Include="Messages.fs" />
         <Compile Include="Actors.fs" />
         <Compile Include="Program.fs" />
         <Content Include="packages.config" />
