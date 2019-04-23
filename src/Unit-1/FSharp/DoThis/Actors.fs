@@ -6,31 +6,6 @@ open Akka.FSharp
 open Messages
 
 module Actors =
-
-    // Active pattern matching to determine the characteristics of the message (empty, even or odd length)
-    let (|EmptyMessage|MessageLengthIsEven|MessageLengthIsOdd|) (msg:string) =
-        match msg.Length, msg.Length % 2 with
-        | 0, _ -> EmptyMessage
-        | _, 0 -> MessageLengthIsEven
-        | _, _ -> MessageLengthIsOdd
-        
-    let validationActor (consoleWriter:IActorRef) (mailbox:Actor<_>) message =
-
-        let (|EmptyMessage|MessageLengthIsEven|MessageLengthIsOdd|) (msg:string) =
-            match msg.Length, msg.Length % 2 with
-            | 0, _ -> EmptyMessage
-            | _, 0 -> MessageLengthIsEven
-            | _, _ -> MessageLengthIsOdd
-        match message with
-        | EmptyMessage ->
-            mailbox.Self <! InputError ("No input received.", ErrorType.Null)
-        | MessageLengthIsEven ->
-            consoleWriter <! InputSuccess ("Thank you. The message was valid.")
-        | MessageLengthIsOdd ->
-            consoleWriter <! InputError ("The message is invalid (odd number of characters).",
-                                        ErrorType.Validation)
-            
-        mailbox.Sender () <! Continue
         
     let consoleReaderActor (validationActor: IActorRef) (mailbox: Actor<_>) message =
         
@@ -72,3 +47,22 @@ module Actors =
             | InputSuccess reason -> printInColor ConsoleColor.Green reason
         | _ -> printInColor ConsoleColor.Yellow (message.ToString ())
                 
+    let validationActor (consoleWriter:IActorRef) (mailbox:Actor<_>) message =
+
+        let (|EmptyMessage|MessageLengthIsEven|MessageLengthIsOdd|) (msg:string) =
+            match msg.Length, msg.Length % 2 with
+            | 0, _ -> EmptyMessage
+            | _, 0 -> MessageLengthIsEven
+            | _, _ -> MessageLengthIsOdd
+            
+        match message with
+        | EmptyMessage ->
+            consoleWriter <! InputError ("No input received.", ErrorType.Null)
+        | MessageLengthIsEven ->
+            consoleWriter <! InputSuccess ("Thank you. The message was valid.")
+        | MessageLengthIsOdd ->
+            consoleWriter <! InputError ("The message is invalid (odd number of characters).",
+                                        ErrorType.Validation)
+            
+        mailbox.Sender () <! Continue
+        
