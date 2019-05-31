@@ -8,6 +8,16 @@ namespace ChartApp.Actors
 {
     public class ChartingActor : ReceiveActor
     {
+        /// <summary>
+        /// Maximum number of points we allow in a series.
+        /// </summary>
+        public const int MaxPoints = 250;
+
+        /// <summary>
+        /// Incrementing the counter we use to plot along the x-axis.
+        /// </summary>
+        private int _xPosCounter;
+        
         #region Messages
 
         public class InitializeChart
@@ -17,7 +27,7 @@ namespace ChartApp.Actors
                 InitialSeries = initialSeries;
             }
 
-            public Dictionary<string, Series> InitialSeries { get; private set; }
+            public Dictionary<string, Series> InitialSeries { get; }
         }
         
         /// <summary>
@@ -33,6 +43,19 @@ namespace ChartApp.Actors
             public Series Series { get; }
         }
 
+        /// <summary>
+        /// Remove an existing <see cref="Series"/> from the chart.
+        /// </summary>
+        public class RemoveSeries
+        {
+            public RemoveSeries(string seriesName)
+            {
+                SeriesName = seriesName;
+            }
+            
+            public string SeriesName { get; }
+        }
+        
         #endregion
 
         private readonly Chart _chart;
@@ -50,6 +73,8 @@ namespace ChartApp.Actors
 
             Receive<InitializeChart>(ic => HandleInitialize(ic));
             Receive<AddSeries>(addSeries => HandleAddSeries(addSeries));
+            Receive<RemoveSeries>(removeSeries => HandleRemoveSeries(removeSeries));
+            Receive<Metric>(metric => HandleMetrics(metric));
         }
 
         #region Individual Message Type Handlers
@@ -58,23 +83,32 @@ namespace ChartApp.Actors
         {
             if (ic.InitialSeries != null)
             {
-                //swap the two series out
+                // Swap the two series out.
                 _seriesIndex = ic.InitialSeries;
             }
-
-            //delete any existing series
+            
+            // Delete any existing series.
             _chart.Series.Clear();
-
-            //attempt to render the initial chart
+            
+            // Set up the axes.
+            var area = _chart.ChartAreas[0];
+            area.AxisX.IntervalType = DateTimeIntervalType.Number;
+            area.AxisY.IntervalType = DateTimeIntervalType.Number;
+            
+            SetChartBoundaries();
+            
+            // Try to render the initial chart. This **may** change the chart boundaries.
             if (_seriesIndex.Any())
             {
                 foreach (var series in _seriesIndex)
                 {
-                    //force both the chart and the internal index to use the same names
+                    // Force chart and internal index to use the same names.
                     series.Value.Name = series.Key;
                     _chart.Series.Add(series.Value);
                 }
             }
+            
+            SetChartBoundaries();
         }
 
         private void HandleAddSeries(AddSeries series)
@@ -83,9 +117,76 @@ namespace ChartApp.Actors
             {
                 _seriesIndex.Add(series.Series.Name, series.Series);
                 _chart.Series.Add(series.Series);
+                SetChartBoundaries();
+            }
+        }
+
+        private void HandleRemoveSeries(RemoveSeries series)
+        {
+            if (!string.IsNullOrEmpty(series.SeriesName) && _seriesIndex.ContainsKey(series.SeriesName))
+            {
+                var seriesToRemove = _seriesIndex[series.SeriesName];
+                _seriesIndex.Remove(series.SeriesName);
+                _chart.Series.Remove(seriesToRemove);
+                SetChartBoundaries();
+            }
+        }
+
+        private void HandleMetrics(Metric metric)
+        {
+            if (!string.IsNullOrEmpty(metric.Series) && _seriesIndex.ContainsKey(metric.Series))
+            {
+                var series = _seriesIndex[metric.Series];
+                
+                // If we are shutting down
+                if (series.Points == null)
+                {
+                    return;
+                }
+                
+                series.Points.AddXY(_xPosCounter++, metric.CounterValue);
+                while (series.Points.Count > MaxPoints)
+                {
+                    series.Points.RemoveAt(0);
+                }
+                SetChartBoundaries();
             }
         }
 
         #endregion
+
+        /// <summary>
+        /// Manages the boundaries of our chart; specifically, ensures that our chart boundaries are updated when
+        /// we remove old points from the beginning of the chart as time elapses.
+        /// </summary>
+        /// <remarks>
+        /// This code has nothing to do with actors; it is UI-management code.
+        /// </remarks>
+        private void SetChartBoundaries()
+        {
+            var allPoints = _seriesIndex.Values.SelectMany(series => series.Points).ToList();
+            var yValues = allPoints.SelectMany(point => point.YValues).ToList();
+            var maxAxisX = _xPosCounter;
+            var minAxisX = _xPosCounter - MaxPoints;
+            var maxAxisY = yValues.Count > 0 ? Math.Ceiling(yValues.Max()) : 1.0d;
+            var minAxisY = yValues.Count > 0 ? Math.Floor(yValues.Min()) : 0.0d;
+
+            // ReSharper disable once CompareOfFloatsByEqualityOperator
+            if (minAxisY == maxAxisY)
+            {
+                maxAxisY++;
+            }
+
+            var area = _chart.ChartAreas[0];
+            area.AxisY.Minimum = minAxisY;
+            area.AxisY.Maximum = Math.Max(1.0d, maxAxisY);
+                
+            if (allPoints.Count > 2)
+            {
+                area.AxisX.Minimum = minAxisX;
+                area.AxisX.Maximum = maxAxisX;
+            }
+        }
+
     }
 }
