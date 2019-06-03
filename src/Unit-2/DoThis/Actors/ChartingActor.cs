@@ -7,7 +7,7 @@ using Akka.Actor;
 
 namespace ChartApp.Actors
 {
-    public class ChartingActor : ReceiveActor
+    public class ChartingActor : ReceiveActor, IWithUnboundedStash
     {
         /// <summary>
         /// Maximum number of points we allow in a series.
@@ -81,6 +81,9 @@ namespace ChartApp.Actors
             Charting(); // Enter the initial behavior (state)
         }
         
+        // Supports delaying messages that **cannot** be handled in a given state.
+        public IStash Stash { get; set; }
+        
         #region Behaviors
 
         private void Charting()
@@ -90,7 +93,6 @@ namespace ChartApp.Actors
             Receive<RemoveSeries>(removeSeries => HandleRemoveSeries(removeSeries));
             Receive<Metric>(metric => HandleMetrics(metric));
             
-            // New receive handler for `TogglePause` message type
             Receive<TogglePause>(pause =>
             {
                 SetPauseButtonText(true);
@@ -100,11 +102,17 @@ namespace ChartApp.Actors
 
         private void Paused()
         {
+            Receive<AddSeries>(addSeries => Stash.Stash());
+            Receive<RemoveSeries>(removeSeries => Stash.Stash());
             Receive<Metric>(metric => HandleMetricsPaused(metric));
             Receive<TogglePause>(pause =>
             {
                 SetPauseButtonText(false);
                 UnbecomeStacked();
+                
+                // ChartingActor is leaving the `Paused` state so put messages back into mailbox for
+                // processing under the new behavior.
+                Stash.UnstashAll();
             });
         }
         
