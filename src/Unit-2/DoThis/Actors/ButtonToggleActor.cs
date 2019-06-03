@@ -12,7 +12,7 @@ namespace ChartApp.Actors
 
         /// <summary>
         /// Toggles the button on and off and sends the appropriate message to
-        /// <see cref="PerformanceCounterActor"/>.
+        /// <see cref="PerformanceCounterCoordinatorActor"/>.
         /// </summary>
         public class Toggle { }
 

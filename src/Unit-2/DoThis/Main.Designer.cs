@@ -38,8 +38,12 @@
             this.btnDisk = new System.Windows.Forms.Button();
             this.btnMemory = new System.Windows.Forms.Button();
             this.btnCpu = new System.Windows.Forms.Button();
+            this.btnPauseResume = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize) (this.sysChart)).BeginInit();
             this.SuspendLayout();
+            // 
+            // sysChart
+            // 
             chartArea1.Name = "ChartArea1";
             this.sysChart.ChartAreas.Add(chartArea1);
             this.sysChart.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -55,6 +59,9 @@
             this.sysChart.Size = new System.Drawing.Size(912, 686);
             this.sysChart.TabIndex = 0;
             this.sysChart.Text = "sysChart";
+            // 
+            // btnDisk
+            // 
             this.btnDisk.Location = new System.Drawing.Point(758, 579);
             this.btnDisk.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnDisk.Name = "btnDisk";
@@ -63,6 +70,9 @@
             this.btnDisk.Text = "DISK (OFF)";
             this.btnDisk.UseVisualStyleBackColor = true;
             this.btnDisk.Click += new System.EventHandler(this.btnDisk_Click);
+            // 
+            // btnMemory
+            // 
             this.btnMemory.Location = new System.Drawing.Point(758, 531);
             this.btnMemory.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnMemory.Name = "btnMemory";
@@ -71,6 +81,9 @@
             this.btnMemory.Text = "MEMORY (OFF)";
             this.btnMemory.UseVisualStyleBackColor = true;
             this.btnMemory.Click += new System.EventHandler(this.btnMemory_Click);
+            // 
+            // btnCpu
+            // 
             this.btnCpu.Location = new System.Drawing.Point(758, 484);
             this.btnCpu.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnCpu.Name = "btnCpu";
@@ -79,9 +92,24 @@
             this.btnCpu.Text = "CPU (ON)";
             this.btnCpu.UseVisualStyleBackColor = true;
             this.btnCpu.Click += new System.EventHandler(this.btnCpu_Click);
+            // 
+            // btnPauseResume
+            // 
+            this.btnPauseResume.Location = new System.Drawing.Point(759, 392);
+            this.btnPauseResume.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnPauseResume.Name = "btnPauseResume";
+            this.btnPauseResume.Size = new System.Drawing.Size(141, 41);
+            this.btnPauseResume.TabIndex = 4;
+            this.btnPauseResume.Text = "Pause ||";
+            this.btnPauseResume.UseVisualStyleBackColor = true;
+            this.btnPauseResume.Click += new System.EventHandler(this.btnPauseResume_Click);
+            // 
+            // Main
+            // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(912, 686);
+            this.Controls.Add(this.btnPauseResume);
             this.Controls.Add(this.btnCpu);
             this.Controls.Add(this.btnMemory);
             this.Controls.Add(this.btnDisk);
@@ -100,6 +128,7 @@
         private System.Windows.Forms.DataVisualization.Charting.Chart sysChart;
         private System.Windows.Forms.Button btnDisk;
         private System.Windows.Forms.Button btnMemory;
+        private System.Windows.Forms.Button btnPauseResume;
         private System.Windows.Forms.Button btnCpu;
     }
 }
